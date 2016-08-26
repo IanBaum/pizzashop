@@ -14,18 +14,23 @@
       <h1>Ian's Pizza</h1>
       <div class="row">
         <div class="col-sm-9">
-          <div id="pizzaSize">
+          <div id="pizzaSizeButtons">
             <h2 id="menuTitle">Choose a size</h2>
-            
-            <!-- <button class="btn btn-primary">Personal</button>
-            <button class="btn btn-primary">Medium</button>
-            <button class="btn btn-primary">Large</button> -->
-          </div> <!-- end pizzaSize -->
+            <div class="row" id="sizeButtons">
+            </div>
+          </div> <!-- end pizzaSizeButtons -->
+          <div id="pizzaToppings">
+            <h2 id="menuTitle">Toppings</h2>
+            <div class="row" id="toppingButtons">
+            </div>
+          </div> <!-- end pizzaToppings -->
         </div> <!-- end main col-9 -->
         <div class="col-sm-3">
           <h3>Your Pizza</h3>
-
-          <ul id="ingredientList"></ul>
+          <h3>Price <span id="pizzaPrice">$0.00</span>
+          <h3 id="pizzaSize"></h3>
+          <h3>Toppings:</h3>
+          <ul id="toppingList"></ul>
         </div> <!-- end sidebar -->
       </div> <!--end row 1 -->
     </div> <!-- end container -->
