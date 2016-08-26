@@ -48,7 +48,7 @@
               </div>
               <div class="form-group">
                 <label for="userAddress">Address</label>
-                <input type="text" class="form-control" placeholder="123 Street Road" id="userAdress">
+                <input type="text" class="form-control" placeholder="123 Street Road" id="userAddress">
               </div>
               <button type="submit" class="btn btn-success">Submit</button>
             </form>
@@ -60,14 +60,14 @@
           </div> <!-- end pizzaForm -->
           <div id="pizzaPay">
             <h2 id="menuTitle">Please enter your address:</h2>
-            <form id="userInfo">
+            <form id="userCardInfo">
               <div class="form-group">
                 <label for="userCardName">Name on card</label>
-                <input type="text" class="form-control" placeholder="John Smith" id="userName">
+                <input type="text" class="form-control" placeholder="John Smith" id="userCardName">
               </div>
               <div class="form-group">
                 <label for="userCardNumber">card number</label>
-                <input type="number" class="form-control" placeholder="123 Street Road" id="userAdress">
+                <input type="number" class="form-control" placeholder="123 Street Road" id="userCardNumber">
               </div>
               <button type="submit" class="btn btn-success">Submit</button>
             </form>
@@ -76,7 +76,12 @@
                 <button class="btn btn-primary" id="payBack">back</button>
               </div>
             </div>
-          </div> <!-- end pizzaForm -->
+          </div> <!-- end pizzaPay -->
+          <div id="pizzaReceipt" class="jumbotron">
+            <h3><span id="receiptName"></span>, your pizza is being made now! It should be done <span id="receiptCook"></span>.<span id="receiptDelivery"></span></h3>
+            <h3> You bought: <span id="receiptList"></span></h3>
+            <h3> Total: <span id="receiptTotal"></span></h3>
+          </div>
         </div> <!-- end main col-9 -->
         <div class="col-sm-3">
           <h3>Your Pizza</h3>

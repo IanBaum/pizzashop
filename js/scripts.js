@@ -48,6 +48,7 @@ Pizza.prototype.isDelivery = function(name,price){
     this.price += 3.00;
     $("#pizzaDelivery").toggle();
     $("#pizzaForm").toggle();
+
   }
   else{
     this.delivery = false;
@@ -59,7 +60,6 @@ Pizza.prototype.isDelivery = function(name,price){
 // User logic
 $(document).ready(function(){
   var newPizza = new Pizza();
-  var userName = "";
   for(i=0;i<sizeOptions.length;i++){
     $("#sizeButtons").append('<div class="col-sm-4"><div class="pizzaButton sizeButton" id="' + sizeOptions[i] + 'Button">' + sizeOptions[i] + '</div></div>');
   }
@@ -75,7 +75,6 @@ $(document).ready(function(){
   //   });
   // }
 
-
   $("#personalButton").click(function(){
     newPizza.chooseSize(sizeOptions[0],sizePrices[0]);
   });
@@ -85,7 +84,6 @@ $(document).ready(function(){
   $("#largeButton").click(function(){
     newPizza.chooseSize(sizeOptions[2],sizePrices[2]);
   });
-
 
   $("#olivesButton").click(function(){
     newPizza.toggleTopping(toppingOptions[0],toppingPrices[0]);
@@ -105,29 +103,46 @@ $(document).ready(function(){
     $("#pizzaDelivery").toggle();
   });
 
-
   $("#pickupButton").click(function(){
     newPizza.isDelivery(deliveryOptions[0],deliveryPrices[0]);
   });
   $("#deliveryButton").click(function(){
     newPizza.isDelivery(deliveryOptions[1],deliveryPrices[1]);
   });
+  $("#deliveryBack").click(function(){
+    $("#pizzaDelivery").toggle();
+    $("#pizzaToppings").toggle();
+  });
 
+  $("#userInfo").submit(function(event){
+    event.preventDefault();
+    $("#pizzaForm").toggle();
+    $("#pizzaPay").toggle();
+  })
   $("#formBack").click(function(){
     $("#pizzaDelivery").toggle();
     $("#pizzaForm").toggle();
     newPizza.price -= 3;
   });
 
-  $("#userInfo").submit(function(event){
+  $("#userCardInfo").submit(function(event){
     event.preventDefault();
-    username = $("#userName").val();
-    $("#pizzaForm").toggle();
+    var userName = $("#userCardName").val();
+    $("#pizzaPay").toggle();
+    $("#pizzaReceipt").toggle();
+    $("#receiptName").text(userName);
+    $("#receiptCook").text("in 20 minutes");
+    if(newPizza.delivery){
+      $("#receiptDelivery").text("Your Pizza should arrive in 40 minutes.");
+    }
+  })
+  $("#payBack").click(function(){
+    $("#pizzaDelivery").toggle();
     $("#pizzaPay").toggle();
   })
 
-
-  $(".pizzaButton").click(function(){
+  $(document).click(function(){
     $("#pizzaPrice").text("$" + newPizza.price.toFixed(2));
+    $("#receiptTotal").text("$" + newPizza.price.toFixed(2));
   });
 });
