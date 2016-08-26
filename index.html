@@ -21,9 +21,62 @@
           </div> <!-- end pizzaSizeButtons -->
           <div id="pizzaToppings">
             <h2 id="menuTitle">Toppings</h2>
-            <div class="row" id="toppingButtons">
+            <div class="row" id="toppingButtons"></div>
+            <div class="row">
+              <div class="col-sm-1">
+                <button class="btn btn-primary" id="toppingBack">back</button></div>
+              <div class="col-sm-1 col-sm-push-10">
+                <button class="btn btn-primary" id="toppingNext">next</button>
+              </div>
             </div>
           </div> <!-- end pizzaToppings -->
+          <div id="pizzaDelivery">
+            <h2 id="menuTitle">Pickup or Delivery?</h2>
+            <div class="row" id="deliveryButtons"></div>
+            <div class="row">
+              <div class="col-sm-1">
+                <button class="btn btn-primary" id="deliveryBack">back</button>
+              </div>
+            </div>
+          </div> <!-- end pizzaDelivery -->
+          <div id="pizzaForm">
+            <h2 id="menuTitle">Please enter your address:</h2>
+            <form id="userInfo">
+              <div class="form-group">
+                <label for="userName">Full Name</label>
+                <input type="text" class="form-control" placeholder="John Smith" id="userName">
+              </div>
+              <div class="form-group">
+                <label for="userAddress">Address</label>
+                <input type="text" class="form-control" placeholder="123 Street Road" id="userAdress">
+              </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <div class="row">
+              <div class="col-sm-1">
+                <button class="btn btn-primary" id="formBack">back</button>
+              </div>
+            </div>
+          </div> <!-- end pizzaForm -->
+          <div id="pizzaPay">
+            <h2 id="menuTitle">Please enter your address:</h2>
+            <form id="userInfo">
+              <div class="form-group">
+                <label for="userCardName">Name on card</label>
+                <input type="text" class="form-control" placeholder="John Smith" id="userName">
+              </div>
+              <div class="form-group">
+                <label for="userCardNumber">card number</label>
+                <input type="number" class="form-control" placeholder="123 Street Road" id="userAdress">
+              </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <div class="row">
+              <div class="col-sm-1">
+                <button class="btn btn-primary" id="payBack">back</button>
+              </div>
+            </div>
+          </div> <!-- end pizzaForm -->
         </div> <!-- end main col-9 -->
         <div class="col-sm-3">
           <h3>Your Pizza</h3>

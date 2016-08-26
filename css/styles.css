@@ -1,3 +1,9 @@
+html,body
+{
+  height: 100%;
+}
+
+
 h1, h2, h3, h4, h5, h6{
   text-align: center;
 }
@@ -9,6 +15,6 @@ h1, h2, h3, h4, h5, h6{
   margin-top:40px;
 }
 
-#pizzaToppings{
+#pizzaToppings, #pizzaDelivery, #pizzaForm, #pizzaPay{
   display:none;
 }
