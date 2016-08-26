@@ -27,6 +27,7 @@ _A webpage that allows the user to build a pizza, including size and toppings. T
 * _Clone this repository_
 * _to view open index.html in the browser of your choice_
 * _to edit open files in the text editor of your choice_
+* _https://ianbaum.github.io/pizzashop_
 
 ## Known Bugs
 
