@@ -1,17 +1,23 @@
-html,body
-{
-  height: 100%;
+body{
+  text-align: center;
+}
+
+img{
+  width: 150px;
+  height:auto;
+  max-height: 150px;
 }
 
 
-h1, h2, h3, h4, h5, h6{
-  text-align: center;
+ul{
+  list-style: none;
+  font-size: 1.5em;
 }
 
 .pizzaButton{
   height:200px;
   width:200px;
-  background-color: red;
+  background-color: #EFEFEF;
   margin-top:40px;
 }
 

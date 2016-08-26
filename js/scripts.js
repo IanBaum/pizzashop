@@ -42,6 +42,18 @@ Pizza.prototype.toggleTopping = function(name, price){
   }
 }
 
+Pizza.prototype.removeToppings = function(){
+  length = this.toppings.length;
+  for(i=0;i<length;i++){
+      this.price = 0;
+      this.toppings.splice($.inArray(name, this.toppings), 1);
+    }
+      $("#pizzaSize").text("");
+      this.printToppings();
+      $("#pizzaSizeButtons").toggle();
+      $("#pizzaToppings").toggle();
+}
+
 Pizza.prototype.isDelivery = function(name,price){
   if(name != "pickup"){
     this.delivery = true;
@@ -61,13 +73,13 @@ Pizza.prototype.isDelivery = function(name,price){
 $(document).ready(function(){
   var newPizza = new Pizza();
   for(i=0;i<sizeOptions.length;i++){
-    $("#sizeButtons").append('<div class="col-sm-4"><div class="pizzaButton sizeButton" id="' + sizeOptions[i] + 'Button">' + sizeOptions[i] + '</div></div>');
+    $("#sizeButtons").append('<div class="col-sm-4"><div class="pizzaButton sizeButton" id="' + sizeOptions[i] + 'Button"><h4>' + sizeOptions[i] + '</h4><img src="img/' + sizeOptions[i] + '.png"></div></div>');
   }
   for(i=0;i<toppingOptions.length;i++){
-    $("#toppingButtons").append('<div class="col-sm-4"><div class="pizzaButton toppingButton" id="' + toppingOptions[i] + 'Button">' + toppingOptions[i] + '</div></div>');
+    $("#toppingButtons").append('<div class="col-sm-4"><div class="pizzaButton toppingButton" id="' + toppingOptions[i] + 'Button"><h4>' + toppingOptions[i] + '</h4><img src="img/' + toppingOptions[i] + '.png"></div></div>');
   }
   for(i=0;i<deliveryOptions.length;i++){
-    $("#deliveryButtons").append('<div class="col-sm-4"><div class="pizzaButton deliveryButton" id="' + deliveryOptions[i] + 'Button">' + deliveryOptions[i] + '</div></div>');
+    $("#deliveryButtons").append('<div class="col-sm-4"><div class="pizzaButton deliveryButton" id="' + deliveryOptions[i] + 'Button"><h4>' + deliveryOptions[i] + '</h4><img src="img/' + deliveryOptions[i] + '.png"></div></div>');
   }
   // for(i=0;i<sizeOptions.length;i++){
   //   $("#" + sizeOptions[i] + "Button").click(function(){
@@ -95,8 +107,7 @@ $(document).ready(function(){
     newPizza.toggleTopping(toppingOptions[2],toppingPrices[2]);
   });
   $("#toppingBack").click(function(){
-    $("#pizzaSizeButtons").toggle();
-    $("#pizzaToppings").toggle();
+    newPizza.removeToppings();
   });
   $("#toppingNext").click(function(){
     $("#pizzaToppings").toggle();
